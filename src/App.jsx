@@ -26,13 +26,26 @@ import useDate from "./useDate";
 
 import useCustomPointer from "./useCustomPointer";
 
+// function App() {
+//   const customPointer = useCustomPointer("🔥");
+
+//   return (
+//     <div>
+//       <h1>Sposta il mouse per vedere il cursore personalizzato!</h1>
+//       {customPointer}
+//     </div>
+//   );
+// }
+
+import useKeyPress from "./useKeyPress";
+
 function App() {
-  const customPointer = useCustomPointer("🔥");
+  const isEnterPressed = useKeyPress("Enter");
 
   return (
     <div>
-      <h1>Sposta il mouse per vedere il cursore personalizzato!</h1>
-      {customPointer}
+      <h1>Tieni premuto "Enter" per testare il custom hook</h1>
+      <p>{isEnterPressed ? "Enter premuto! ✅" : "Aspettando input... ⌨️"}</p>
     </div>
   );
 }
